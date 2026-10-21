@@ -11,7 +11,9 @@ app = FastAPI(title="Customer Management System")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://customer-management-system-ubp5.onrender.com/"
+        "https://customer-management-system-ubp5.onrender.com",  # no trailing slash
+        "http://127.0.0.1:5500",   # VS Code Live Server
+        "http://localhost:5500",
     ],
     allow_credentials=False,
     allow_methods=["*"],
@@ -24,3 +26,4 @@ app.include_router(router)
 @app.get("/")
 def home():
     return {"message": "Customer Management API is running"}
+

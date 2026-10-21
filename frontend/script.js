@@ -1,6 +1,7 @@
 
+// Base URL of the backend + the /customers route (no trailing slash here)
 const API_URL =
-    "https://customer-management-system-1-7ser.onrender.com";
+    "https://customer-management-system-1-7ser.onrender.com/customers";
 
 // HTML elements
 const form = document.getElementById("customerForm");
@@ -59,7 +60,7 @@ async function loadCustomers() {
     loadingCell.textContent = "Loading customers from Render...";
 
     try {
-        const customers = await apiRequest(API_URL);
+        const customers = await apiRequest(`${API_URL}/`);
 
         if (!Array.isArray(customers)) {
             throw new Error("API response is not a customer list.");
@@ -157,8 +158,8 @@ form.addEventListener("submit", async event => {
     }
 
     const url = isEditing
-        ? `${API_URL}${encodeURIComponent(id)}`
-        : API_URL;
+        ? `${API_URL}/${encodeURIComponent(id)}`
+        : `${API_URL}/`;
 
     saveBtn.disabled = true;
 
@@ -192,7 +193,7 @@ form.addEventListener("submit", async event => {
 async function editCustomer(id) {
     try {
         const customer = await apiRequest(
-            `${API_URL}${encodeURIComponent(id)}`
+            `${API_URL}/${encodeURIComponent(id)}`
         );
 
         customerId.value = customer.id;
@@ -226,7 +227,7 @@ async function deleteCustomer(id) {
 
     try {
         await apiRequest(
-            `${API_URL}${encodeURIComponent(id)}`,
+            `${API_URL}/${encodeURIComponent(id)}`,
             { method: "DELETE" }
         );
 
