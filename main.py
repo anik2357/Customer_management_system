@@ -11,7 +11,7 @@ app = FastAPI(title="Customer Management System")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://customer-management-system-ubp5.onrender.com"
+        "*"
     ],
     allow_credentials=False,
     allow_methods=["*"],
