@@ -10,8 +10,8 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 
 SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://training_8cn2_user:D4JUFWusk4GVGqMXLDVMSZWFz2TEFybU@dpg-dbbfh061egvs73fsa060-a.oregon-postgres.render.com/training_8cn2"
 
-engine = create_engine(DATABASE_URL, pool_pre_ping=True)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+engine = create_engine(SQLALCHEMY_DATABASE_URL) 
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine) 
 Base = declarative_base()
 
 
