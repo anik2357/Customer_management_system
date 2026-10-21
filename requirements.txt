@@ -1,7 +1,6 @@
 fastapi
 uvicorn[standard]
 sqlalchemy
-pymysql
 email-validator
 pydantic
 psycopg2-binary
