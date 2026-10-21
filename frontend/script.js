@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/customers/";
+const API_URL = "https://customer-management-system-1-7ser.onrender.com";
 
 const form = document.getElementById("customerForm");
 const customerId = document.getElementById("customerId");
