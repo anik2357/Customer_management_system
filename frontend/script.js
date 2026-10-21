@@ -1,7 +1,7 @@
 
 // Base URL of the backend + the /customers route (no trailing slash here)
 const API_URL =
-    "https://customer-management-system-ubp5.onrender.com";
+    "https://customer-management-system-ubp5.onrender.com/customers";
 
 // HTML elements
 const form = document.getElementById("customerForm");
