@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Customer Management System</h1>
+
+        <form id="customerForm">
+            <input type="hidden" id="customerId">
+
+            <label for="name">Customer Name *</label>
+            <input type="text" id="name" required maxlength="100">
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" required maxlength="150">
+
+            <label for="phone">Phone *</label>
+            <input type="text" id="phone" required maxlength="20">
+
+            <label for="address">Address</label>
+            <textarea id="address" maxlength="255"></textarea>
+
+            <label for="is_active">Customer Status</label>
+            <select id="is_active">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+
+            <div class="buttons">
+                <button type="submit" id="saveBtn">Add Customer</button>
+                <button type="button" id="cancelBtn" class="secondary" hidden>Cancel Edit</button>
+            </div>
+        </form>
+
+        <p id="message" role="status" aria-live="polite"></p>
+
+        <h2>Customer List</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Name</th><th>Email</th><th>Phone</th>
+                        <th>Address</th><th>Status</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTable">
+                    <tr><td colspan="7">Loading customers...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
