@@ -1,6 +1,6 @@
 
 const API_URL =
-    "https://customer-management-system-1-7ser.onrender.com/customers/";
+    "https://customer-management-system-1-7ser.onrender.com";
 
 // HTML elements
 const form = document.getElementById("customerForm");
