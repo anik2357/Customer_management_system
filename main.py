@@ -11,7 +11,7 @@ app = FastAPI(title="Customer Management System")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://customer-management-system-ubp5.onrender.com",  # no trailing slash
+        "https://customer-management-system-1-7ser.onrender.com",  # no trailing slash
         "http://127.0.0.1:5500",   # VS Code Live Server
         "http://localhost:5500",
     ],
